@@ -45,8 +45,8 @@ class OrderController extends Controller
         return response()->json(['success'=>true,'message'=>'Rekord sikeresen hozzáadva!'],201,['Access-Control-Allow-Origin'=>'*'],JSON_UNESCAPED_UNICODE);
     }
 
-    public function destroy($id){
-        $order = Order::find($id);
+    public function destroy(Request $request){
+        $order = Order::find($request->id);
         if($order){
             $order->delete();
             return response()->json(['success'=>true,'message'=>'Rekord sikeresen törölve!'],200,['Access-Control-Allow-Origin'=>'*'],JSON_UNESCAPED_UNICODE);

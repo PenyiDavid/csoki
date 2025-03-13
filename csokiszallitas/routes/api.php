@@ -14,4 +14,4 @@ Route::post('/chocolates', [ChocolateController::class, 'store']);
 
 Route::get('/orders', [OrderController::class, 'index']);
 Route::post('/orders', [OrderController::class, 'store']);
-Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
+Route::delete('/orders', [OrderController::class, 'destroy']);
